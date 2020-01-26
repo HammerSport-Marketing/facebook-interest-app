@@ -27,7 +27,7 @@ FBLogin.addEventListener('onclick', (e) => {
   console.log(LoginState);
 });
 
-
+class FacebookInterest{
 async getInterest(interest) {
   // Fetch Profile
   const interestResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=[%22business%22]&limit=10000&locale=en_US&access_token=$this.accessToken`);
@@ -40,7 +40,7 @@ async getInterest(interest) {
   const repos = await repoResponse.json();
 
   return {
-    profile,
-    repos
+    interest
+    
   }
-};
+}}

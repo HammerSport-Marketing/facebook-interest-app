@@ -1,0 +1,1 @@
+var facebookInterest = new FacebookInterest;

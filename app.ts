@@ -1,0 +1,1 @@
+const facebookInterest = new FacebookInterest;
