@@ -2,7 +2,9 @@ const facebookInterest = new FacebookInterest;
 
 const ui = new UI;
 
-searchUser.addEventListener('keyup', (e) => {
+const searchInterest = document.getElementById('searchInterest');
+
+searchInterest.addEventListener('keyup', (e) => {
     // Get input text
     const interestText = e.target.value;
   

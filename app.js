@@ -1,6 +1,7 @@
 var facebookInterest = new FacebookInterest;
 var ui = new UI;
-searchUser.addEventListener('keyup', function (e) {
+var searchInterest = document.getElementById('searchInterest');
+searchInterest.addEventListener('keyup', function (e) {
     // Get input text
     var interestText = e.target.value;
     if (interestText !== '') {
