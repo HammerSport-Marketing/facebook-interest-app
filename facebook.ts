@@ -17,4 +17,10 @@ function checkLoginState() {FB.getLoginStatus(function(response) {
       // to log in to Facebook before authorizing your application.
     }
    });
-  }
+  };
+
+const FBLogin = document.querySelector('fb');
+
+FBLogin.addEventListener('onclick', (e) => {
+  checkLoginState();
+});
