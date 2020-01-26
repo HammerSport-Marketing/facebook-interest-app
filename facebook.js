@@ -27,3 +27,19 @@ FBLogin.addEventListener('onclick', function (e) {
     checkLoginState();
     console.log(LoginState);
 });
+async;
+getInterest(interest);
+{
+    // Fetch Profile
+    var interestResponse = yield fetch("https://graph.facebook.com/search?type=adinterest&q=[%22business%22]&limit=10000&locale=en_US&access_token=$this.accessToken");
+    // Fetch Repo
+    var repoResponse = yield fetch("https://api.github.com/users/" + user + "/repos?per_page=" + this.repos_count + "&sort=" + this.repos_sort + "&client_id=" + this.client_id + "&client_secret=" + this.client_secret);
+    var interest = yield interestResponse.json();
+    console.log(interest);
+    var repos = yield repoResponse.json();
+    return {
+        profile: profile,
+        repos: repos
+    };
+}
+;
