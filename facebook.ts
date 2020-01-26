@@ -23,4 +23,5 @@ const FBLogin = document.querySelector('fb');
 
 FBLogin.addEventListener('onclick', (e) => {
   checkLoginState();
+  console.log(LoginState);
 });
