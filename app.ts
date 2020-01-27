@@ -14,7 +14,7 @@ searchTopic.addEventListener('submit', (e) => {
 
     if(searchText !== ''){
         console.log(searchText);
-        searchSubmit.addEventListener('click', (e) => {
+        searchSubmit.addEventListener('', (e) => {
             //Make httpcall
             facebook.getTopic(searchText)
             .then(data => {

@@ -9,7 +9,7 @@ searchTopic.addEventListener('submit', function (e) {
     // Search input event listener
     if (searchText !== '') {
         console.log(searchText);
-        searchSubmit.addEventListener('click', function (e) {
+        searchSubmit.addEventListener('', function (e) {
             //Make httpcall
             facebook.getTopic(searchText)
                 .then(function (data) {
