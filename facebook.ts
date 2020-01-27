@@ -62,8 +62,8 @@ class Store {
 
 class Facebook {
 
-  async getSearchData(search, tokens) {
-    const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${tokens}`);
+  async getSearchData(search, token) {
+    const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${token}`);
 
     const responseData = await searchResponse.json();
 
