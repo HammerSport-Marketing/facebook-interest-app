@@ -40,7 +40,7 @@ class Facebook {
 
 
   async getSearchData(search) {
-    const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${tokens}`);
+    const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${token}`);
 
     const responseData = await searchResponse.json();
 
