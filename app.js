@@ -5,6 +5,7 @@ var searchBar = document.querySelector('.form-control');
 console.log(searchBar);
 //Init UI
 var ui = new UI;
+var store = new Store;
 var searchSubmit = document.getElementById('searchSubmit');
 searchBar.addEventListener('keyup', function (e) {
     var searchText = e.target.value;

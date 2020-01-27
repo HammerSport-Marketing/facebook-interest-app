@@ -11,6 +11,8 @@ console.log(searchBar);
 //Init UI
 const ui = new UI;
 
+const store = new Store;
+
 const searchSubmit = document.getElementById('searchSubmit')   
 
 searchBar.addEventListener('keyup', (e) => {
