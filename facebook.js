@@ -93,12 +93,12 @@ var Store = /** @class */ (function () {
 var Facebook = /** @class */ (function () {
     function Facebook() {
     }
-    Facebook.prototype.getSearchData = function (search, token) {
+    Facebook.prototype.getSearchData = function (search, accessToken) {
         return __awaiter(this, void 0, void 0, function () {
             var searchResponse, responseData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + token)];
+                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + accessToken)];
                     case 1:
                         searchResponse = _a.sent();
                         return [4 /*yield*/, searchResponse.json()];
