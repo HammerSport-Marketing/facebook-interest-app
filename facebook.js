@@ -34,6 +34,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+function checkLoginState() {
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // The user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire.
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            // Add to LS
+            Store.addToken(accessToken);
+        }
+        else if (response.status === 'not_authorized') {
+            // The user hasn't authorized your application.  They
+            // must click the Login button, or you must call FB.login
+            // in response to a user gesture, to launch a login dialog.
+        }
+        else {
+            // The user isn't logged in to Facebook. You can launch a
+            // login dialog with a user gesture, but the user may have
+            // to log in to Facebook before authorizing your application.
+        }
+    });
+}
 var FBLogin = document.getElementById('FBLogin');
 // Local Storage
 var Store = /** @class */ (function () {
@@ -68,12 +93,12 @@ var Store = /** @class */ (function () {
 var Facebook = /** @class */ (function () {
     function Facebook() {
     }
-    Facebook.prototype.getSearchData = function (search, accessToken) {
+    Facebook.prototype.getSearchData = function (search, tokens) {
         return __awaiter(this, void 0, void 0, function () {
             var searchResponse, responseData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + accessToken)];
+                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + tokens)];
                     case 1:
                         searchResponse = _a.sent();
                         return [4 /*yield*/, searchResponse.json()];
