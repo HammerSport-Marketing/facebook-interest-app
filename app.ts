@@ -3,7 +3,7 @@ const searchTopic = document.getElementById('searchTopic')
 
 const searchSubmit = document.querySelector('#searchSubmit')   
 
-searchTopic.addEventListener('search', (e) => {
+searchTopic.addEventListener('submit', (e) => {
     const searchText = e.target.value;
     // Search input event listener
 

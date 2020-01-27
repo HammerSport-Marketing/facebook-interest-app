@@ -1,7 +1,7 @@
 // Define Search Topic From Search Bar
 var searchTopic = document.getElementById('searchTopic');
 var searchSubmit = document.querySelector('#searchSubmit');
-searchTopic.addEventListener('search', function (e) {
+searchTopic.addEventListener('submit', function (e) {
     var searchText = e.target.value;
     // Search input event listener
     if (searchText !== '') {
