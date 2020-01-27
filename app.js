@@ -1,26 +1,12 @@
-var facebookInterest = new FacebookInterest;
-var ui = new UI;
-var searchInterest = document.getElementById('searchInterest');
-searchInterest.addEventListener('keyup', function (e) {
-    // Get input text
-    var interestText = e.target.value;
-    if (interestText !== '') {
-        // Make http call
-        facebookInterest.getInterest(interestText)
-            .then(function (data) {
-            if (data.interest.message === 'Not Found') {
-                // Show alert
-                ui.showAlert('User Not Found', 'alert alert-danger');
-            }
-            else {
-                // Show profile
-                ui.showInterest(data.path);
-                ui.showRepos(data.repos);
-            }
+// Define Search Topic From Search Bar
+var searchTopic = document.getElementById('searchTopic');
+var searchSubmit = document.querySelector('#searchSubmit');
+searchTopic.addEventListener('search', function (e) {
+    var searchText = e.target.value;
+    // Search input event listener
+    if (searchText !== '') {
+        searchSubmit.addEventListener('click', function (e) {
+            console.log(searchText);
         });
-    }
-    else {
-        // Clear profile
-        ui.clearProfile();
     }
 });

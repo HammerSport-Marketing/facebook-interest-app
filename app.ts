@@ -1,28 +1,22 @@
-const facebookInterest = new FacebookInterest;
+// Define Search Topic From Search Bar
+const searchTopic = document.getElementById('searchTopic')
 
-const ui = new UI;
+const searchSubmit = document.querySelector('#searchSubmit')   
 
-const searchInterest = document.getElementById('searchInterest');
+searchTopic.addEventListener('search', (e) => {
+    const searchText = e.target.value;
+    // Search input event listener
 
-searchInterest.addEventListener('keyup', (e) => {
-    // Get input text
-    const interestText = e.target.value;
-  
-    if(interestText !== ''){
-     // Make http call
-     facebookInterest.getInterest(interestText)
-      .then(data => {
-        if(data.interest.message === 'Not Found') {
-          // Show alert
-          ui.showAlert('User Not Found', 'alert alert-danger')
-        } else {
-          // Show profile
-          ui.showInterest(data.path);
-          ui.showRepos(data.repos);
-        }
-      })
-    } else {
-      // Clear profile
-      ui.clearProfile();
+    if(searchText !== ''){
+        
+        searchSubmit.addEventListener('click', (e) => {
+            //Make httpcall
+            facebook.getTopic(searchText)
+            .then(data => {
+                console.log(data);
+            })
+        });
     }
-  }); 
+    
+});
+

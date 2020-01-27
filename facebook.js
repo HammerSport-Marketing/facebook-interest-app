@@ -59,37 +59,31 @@ function checkLoginState() {
 }
 ;
 var FBLogin = document.querySelector('fb');
-FBLogin.addEventListener('onclick', function (e) {
+console.log(uid);
+FBLogin.addEventListener('click', function (e) {
     checkLoginState();
     console.log(LoginState);
 });
-var FacebookInterest = /** @class */ (function () {
-    function FacebookInterest() {
+var Facebook = /** @class */ (function () {
+    function Facebook() {
     }
-    FacebookInterest.prototype.getInterest = function (interest) {
+    Facebook.prototype.getTopic = function (topic) {
         return __awaiter(this, void 0, void 0, function () {
-            var interestResponse, repoResponse, interest, repos;
+            var interestResponse, interestData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=[%22business%22]&limit=10000&locale=en_US&access_token=$this.accessToken")];
+                    case 0: return [4 /*yield*/, fetch("\n    https://graph.facebook.com/search?type=adinterest&q=" + topic + "&limit=10000&locale=en_US&access_token=" + accessToken + "\n    ")];
                     case 1:
                         interestResponse = _a.sent();
-                        return [4 /*yield*/, fetch("https://api.github.com/users/" + user + "/repos?per_page=" + this.repos_count + "&sort=" + this.repos_sort + "&client_id=" + this.client_id + "&client_secret=" + this.client_secret)];
-                    case 2:
-                        repoResponse = _a.sent();
                         return [4 /*yield*/, interestResponse.json()];
-                    case 3:
-                        interest = _a.sent();
-                        console.log(interest);
-                        return [4 /*yield*/, repoResponse.json()];
-                    case 4:
-                        repos = _a.sent();
+                    case 2:
+                        interestData = _a.sent();
                         return [2 /*return*/, {
-                                interest: interest
+                                interestData: interestData
                             }];
                 }
             });
         });
     };
-    return FacebookInterest;
+    return Facebook;
 }());

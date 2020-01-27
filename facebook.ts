@@ -8,6 +8,7 @@ function checkLoginState() {
       // and signed request each expire.
       var uid = response.authResponse.userID;
       var accessToken = response.authResponse.accessToken;
+      
     } else if (response.status === 'not_authorized') {
       // The user hasn't authorized your application.  They
       // must click the Login button, or you must call FB.login
@@ -22,25 +23,21 @@ function checkLoginState() {
 
 const FBLogin = document.querySelector('fb');
 
-FBLogin.addEventListener('onclick', (e) => {
+console.log(uid);
+FBLogin.addEventListener('click', (e) => {
   checkLoginState();
   console.log(LoginState);
 });
 
-class FacebookInterest{
-async getInterest(interest) {
-  // Fetch Profile
-  const interestResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=[%22business%22]&limit=10000&locale=en_US&access_token=$this.accessToken`);
-  // Fetch Repo
-  const repoResponse = await fetch(`https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.client_id}&client_secret=${this.client_secret}`);
+class Facebook {
+  async getTopic(topic) {
+    const interestResponse = await fetch(`
+    https://graph.facebook.com/search?type=adinterest&q=${topic}&limit=10000&locale=en_US&access_token=${accessToken}
+    `);
 
-
-  const interest = await interestResponse.json();
-  console.log(interest);
-  const repos = await repoResponse.json();
-
-  return {
-    interest
-    
+    const interestData = await interestResponse.json();
+    return {
+      interestData
+    }
   }
-}}
+}
