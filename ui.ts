@@ -1,10 +1,10 @@
 class UI {
     constructor() {
-      this.profile = document.getElementById('profile');
+      this.data = document.getElementById('data');
     }
-    //Display Profile In Ui
-    showProfile(user) {
-      this.profile.innerHTML = `
+    //Display data In Ui
+    showData(search) {
+      this.data.innerHTML = `
           <div class="card card-body mb-3">
             <div class="row">
               <div class="col-md-3">
