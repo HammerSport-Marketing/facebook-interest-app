@@ -58,9 +58,9 @@ class Store {
 
   static removeToken() {
   }
-}
 
-class Facebook {
+  
+  class Facebook {
 
   async getSearchData(search, token) {
     const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${token}`);
@@ -72,7 +72,7 @@ class Facebook {
     }
   }
 }
-
+  
 
 
 
