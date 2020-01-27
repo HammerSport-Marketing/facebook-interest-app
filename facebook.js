@@ -68,13 +68,7 @@ var Store = /** @class */ (function () {
 var Facebook = /** @class */ (function () {
     function Facebook() {
     }
-    Facebook.addToken = function (accessToken) {
-        var tokens = Store.getToken();
-        tokens.push(accessToken);
-        console.log(tokens);
-        localStorage.setItem('token', JSON.stringify(accessToken));
-    };
-    Facebook.prototype.getSearchData = function (search) {
+    Facebook.prototype.getSearchData = function (search, token) {
         return __awaiter(this, void 0, void 0, function () {
             var searchResponse, responseData;
             return __generator(this, function (_a) {
