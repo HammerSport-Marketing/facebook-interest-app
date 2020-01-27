@@ -29,15 +29,15 @@ const FBLogin = document.getElementById('FBLogin');
 // Local Storage
 class Store {
   static getToken() {
-    let tokens;
-    if (localStorage.getItem('tokens') === null) {
-      tokens = [];
+    let token;
+    if (localStorage.getItem('token') === null) {
+      token = [];
 
     } else {
-      tokens = JSON.parse(localStorage.getItem('tokens'));
+      token = JSON.parse(localStorage.getItem('token'));
     }
 
-    return tokens;
+    return token;
   }
 
 
@@ -49,10 +49,10 @@ class Store {
   }
 
   static addToken(accessToken) {
-    const tokens = Store.getToken();
+    const token = Store.getToken();
 
-    tokens.push(accessToken);
-    console.log(tokens);
+    token.push(accessToken);
+    console.log(token);
     localStorage.setItem('token', JSON.stringify(accessToken));
   }
 

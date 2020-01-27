@@ -65,14 +65,14 @@ var Store = /** @class */ (function () {
     function Store() {
     }
     Store.getToken = function () {
-        var tokens;
-        if (localStorage.getItem('tokens') === null) {
-            tokens = [];
+        var token;
+        if (localStorage.getItem('token') === null) {
+            token = [];
         }
         else {
-            tokens = JSON.parse(localStorage.getItem('tokens'));
+            token = JSON.parse(localStorage.getItem('token'));
         }
-        return tokens;
+        return token;
     };
     Store.displayToken = function () {
         var tokens = Store.getToken();
@@ -81,9 +81,9 @@ var Store = /** @class */ (function () {
         });
     };
     Store.addToken = function (accessToken) {
-        var tokens = Store.getToken();
-        tokens.push(accessToken);
-        console.log(tokens);
+        var token = Store.getToken();
+        token.push(accessToken);
+        console.log(token);
         localStorage.setItem('token', JSON.stringify(accessToken));
     };
     Store.removeToken = function () {
