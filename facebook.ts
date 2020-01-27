@@ -62,6 +62,7 @@ class Store {
 
 
 var FBLogin = document.getElementById('FBLogin');
+e.preventDefault();
 
 FBLogin.addEventListener('click', (e) => {
   checkLoginState();
@@ -80,3 +81,4 @@ class Facebook {
     }
   }
 }
+
