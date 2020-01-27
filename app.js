@@ -6,7 +6,11 @@ searchTopic.addEventListener('search', function (e) {
     // Search input event listener
     if (searchText !== '') {
         searchSubmit.addEventListener('click', function (e) {
-            console.log(searchText);
+            //Make httpcall
+            facebook.getTopic(searchText)
+                .then(function (data) {
+                console.log(data);
+            });
         });
     }
 });
