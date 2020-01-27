@@ -93,6 +93,7 @@ var FBLogin = document.getElementById('FBLogin');
 FBLogin.addEventListener('click', function (e) {
     checkLoginState();
     console.log(LoginState);
+    e.preventDefault();
 });
 var Facebook = /** @class */ (function () {
     function Facebook() {
@@ -102,7 +103,7 @@ var Facebook = /** @class */ (function () {
             var interestResponse, interestData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("\n    https://graph.facebook.com/search?type=adinterest&q=" + topic + "&limit=10000&locale=en_US&access_token=" + accessToken + "\n    ")];
+                    case 0: return [4 /*yield*/, fetch("\n    https://graph.facebook.com/search?type=adinterest&q=" + topic + "&limit=10000&locale=en_US&access_token=" + token + "\n    ")];
                     case 1:
                         interestResponse = _a.sent();
                         return [4 /*yield*/, interestResponse.json()];
