@@ -1,6 +1,5 @@
-var facebook = new Facebook;
+var searchBar = document.querySelector('.form-control');
 // Define Search Topic From Search Bar
-var searchBar = document.getElementById('searchBar');
 console.log(searchBar);
 //Init UI
 var ui = new UI;

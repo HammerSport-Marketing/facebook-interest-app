@@ -1,7 +1,8 @@
-const facebook = new Facebook;
+const searchBar = document.querySelector('.form-control');
+
 
 // Define Search Topic From Search Bar
-const searchBar = document.getElementById('searchBar')
+
 
 console.log(searchBar);
 //Init UI
