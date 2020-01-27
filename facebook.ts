@@ -47,8 +47,7 @@ class Store {
 
 
 
-const FBLogin = document.querySelector('fb');
-
+var FBLogin = document.getElementById('FBLogin');
 
 FBLogin.addEventListener('click', (e) => {
   checkLoginState();
