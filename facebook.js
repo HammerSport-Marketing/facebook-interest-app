@@ -90,7 +90,7 @@ var Store = /** @class */ (function () {
     return Store;
 }());
 var FBLogin = document.getElementById('FBLogin');
-FBLogin.addEventListener('click', function (e) {
+FBLogin.addEventListener('search', function (e) {
     checkLoginState();
     console.log(LoginState);
     e.preventDefault();
