@@ -1,20 +1,20 @@
 const facebook = new Facebook;
 
 // Define Search Topic From Search Bar
-const searchTopic = document.getElementById('searchTopic')
+const searchBar = document.getElementById('searchBar')
 
 //Init UI
 const ui = new UI;
 
 const searchSubmit = document.querySelector('#searchSubmit')   
 
-searchTopic.addEventListener('submit', (e) => {
+searchBar.addEventListener('keyup', (e) => {
     const searchText = e.target.value;
     // Search input event listener
 
-    if(searchText !== 'click'){
+    if(searchText !== ''){
         console.log(searchText);
-        searchSubmit.addEventListener('', (e) => {
+        searchSubmit.addEventListener('click', (e) => {
             //Make httpcall
             facebook.getTopic(searchText)
             .then(data => {
