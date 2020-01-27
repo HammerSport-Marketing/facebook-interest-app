@@ -1,4 +1,6 @@
 
+const FBLogin = document.getElementById('FBLogin');
+
 // Local Storage
 class Store {
   static getToken() {
@@ -31,10 +33,23 @@ class Store {
 
   static removeToken() {
   }
+}
+
+class Facebook {
+
+
+
+  async getSearchData(search) {
+    const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${tokens}`);
+
+    const responseData = await searchResponse.json();
+
+    return {
+      responseData
+    }
   }
+}
 
 
 
-
-const FBLogin = document.getElementById('FBLogin');
 

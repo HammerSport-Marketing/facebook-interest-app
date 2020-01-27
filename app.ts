@@ -1,3 +1,6 @@
+//Init Facebook
+const facebook = new Facebook;
+
 const searchBar = document.querySelector('.form-control');
 
 
@@ -15,6 +18,11 @@ searchBar.addEventListener('keyup', (e) => {
 
     if(searchText !== ''){
         console.log(searchText);
+        //Make Http call
+       facebook.getSearchData(searchText)
+       .then(data => {
+           console.log(data);
+       })
     }
 });
 
