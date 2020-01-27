@@ -44,25 +44,6 @@ function checkLoginState() {
             // and signed request each expire.
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
-            var Store_1 = /** @class */ (function () {
-                function Store() {
-                }
-                Store.storeUserToken = function () {
-                    var at;
-                    if (localStorage.getItem('at') === null) {
-                        at = [];
-                    }
-                    else {
-                        at = JSON.parse(localStorage.getItem('at'));
-                    }
-                };
-                Store.addData = function (at) {
-                    var at = Store.storeUserToken();
-                    at.push(at);
-                    localStorage.setItem('at', JSON.stringify(at));
-                };
-                return Store;
-            }());
         }
         else if (response.status === 'not_authorized') {
             // The user hasn't authorized your application.  They
@@ -75,13 +56,29 @@ function checkLoginState() {
             // to log in to Facebook before authorizing your application.
         }
     });
-    addData(at);
-    {
+}
+// Local Storage
+var Store = /** @class */ (function () {
+    function Store() {
+    }
+    Store.prototype.displayToken = function () {
+    };
+    Store.storeUserToken = function () {
+        var at;
+        if (localStorage.getItem('at') === null) {
+            at = [];
+        }
+        else {
+            at = JSON.parse(localStorage.getItem('at'));
+        }
+    };
+    Store.addData = function (at) {
         var at = Store.storeUserToken();
         at.push(at);
         localStorage.setItem('at', JSON.stringify(at));
-    }
-}
+    };
+    return Store;
+}());
 var FBLogin = document.querySelector('fb');
 console.log(uid);
 FBLogin.addEventListener('click', function (e) {

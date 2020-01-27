@@ -8,25 +8,8 @@ function checkLoginState() {
       // and signed request each expire.
       var uid = response.authResponse.userID;
       var accessToken = response.authResponse.accessToken;
-      class Store {
-        static storeUserToken() {
-          let at;
-          if(localStorage.getItem('at') === null) {
-            at = [];
 
-          } else {
-            at = JSON.parse(localStorage.getItem('at'));
-          }
-        }
-        static addData(at) {
-          const at = Store.storeUserToken();
-      
-          at.push(at);
-      
-          localStorage.setItem('at', JSON.stringify(at));
-        }
-      }
-      
+
     } else if (response.status === 'not_authorized') {
       // The user hasn't authorized your application.  They
       // must click the Login button, or you must call FB.login
@@ -37,7 +20,21 @@ function checkLoginState() {
       // to log in to Facebook before authorizing your application.
     }
   });
- 
+
+
+}
+// Local Storage
+class Store {
+  displayToken() {
+   static storeUserToken() {
+    let at;
+    if (localStorage.getItem('at') === null) {
+      at = [];
+
+    } else {
+      at = JSON.parse(localStorage.getItem('at'));
+    }
+  }
   static addData(at) {
     const at = Store.storeUserToken();
 
