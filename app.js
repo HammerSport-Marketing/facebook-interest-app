@@ -13,4 +13,5 @@ searchTopic.addEventListener('search', function (e) {
             });
         });
     }
+    e.preventDefault();
 });
