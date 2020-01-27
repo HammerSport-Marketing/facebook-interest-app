@@ -7,6 +7,7 @@ var searchSubmit = document.querySelector('#searchSubmit');
 searchBar.addEventListener('keyup', function (e) {
     var searchText = e.target.value;
     // Search input event listener
+    console.log(searchText);
     if (searchText !== '') {
         console.log(searchText);
         searchSubmit.addEventListener('click', function (e) {

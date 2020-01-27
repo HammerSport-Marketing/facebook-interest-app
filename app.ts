@@ -1,17 +1,17 @@
-const facebook = new Facebook;
+var facebook = new Facebook;
 
 // Define Search Topic From Search Bar
-const searchBar = document.getElementById('searchBar')
+var searchBar = document.getElementById('searchBar')
 
 //Init UI
-const ui = new UI;
+var ui = new UI;
 
-const searchSubmit = document.querySelector('#searchSubmit')   
+var searchSubmit = document.querySelector('#searchSubmit')   
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchText = e.target.value;
+searchBar.addEventListener('keyup', function (e) {
+    var searchText = e.target.value;
     // Search input event listener
-
+    console.log(searchText);
     if(searchText !== ''){
         console.log(searchText);
         searchSubmit.addEventListener('click', (e) => {
