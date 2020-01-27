@@ -17,6 +17,6 @@ searchTopic.addEventListener('search', (e) => {
             })
         });
     }
-    
+    e.preventDefault();
 });
 

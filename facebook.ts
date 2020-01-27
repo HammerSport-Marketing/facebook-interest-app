@@ -64,10 +64,9 @@ class Store {
 var FBLogin = document.getElementById('FBLogin');
 
 
-FBLogin.addEventListener('search', (e) => {
+FBLogin.addEventListener('click', (e) => {
   checkLoginState();
   console.log(LoginState);
-  e.preventDefault();
 });
 
 class Facebook {
