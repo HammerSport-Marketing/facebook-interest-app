@@ -14,7 +14,7 @@ searchBar.addEventListener('keyup', function (e) {
         //Make Http call
         facebook.getSearchData(searchText)
             .then(function (data) {
-            console.log(data.responseData);
+            console.log(data.responseData.data);
         });
     }
 });
