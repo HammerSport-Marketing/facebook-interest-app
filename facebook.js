@@ -63,7 +63,7 @@ var Facebook = /** @class */ (function () {
         async;
         getSearchText(searchText);
         {
-            var interestResponse = yield fetch("\n    https://graph.facebook.com/search?type=adinterest&q=" + searchText + "&limit=10000&locale=en_US&access_token=" + token + "\n    ");
+            var interestResponse = yield fetch("https://graph.facebook.com/search?type=adinterest&q=" + searchText + "&limit=10000&locale=en_US&access_token=" + token");
             var interestData = yield interestResponse.json();
             return {
                 interestData: interestData
