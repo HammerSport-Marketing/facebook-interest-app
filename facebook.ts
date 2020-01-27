@@ -42,8 +42,8 @@ class Store {
 
 
   static displayToken() {
-    const tokens = Store.getToken();
-    tokens.forEach(function (token) {
+    const token = Store.getToken();
+    token.forEach(function (token) {
       console.log(token);
     })
   }

@@ -75,8 +75,8 @@ var Store = /** @class */ (function () {
         return token;
     };
     Store.displayToken = function () {
-        var tokens = Store.getToken();
-        tokens.forEach(function (token) {
+        var token = Store.getToken();
+        token.forEach(function (token) {
             console.log(token);
         });
     };
