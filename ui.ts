@@ -4,6 +4,7 @@ class UI {
     }
     //Display data In Ui
     showData(search) {
+        console.log(search)
       this.data.innerHTML = `
           <div class="card card-body mb-3">
             <div class="row">
