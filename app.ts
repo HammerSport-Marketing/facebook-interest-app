@@ -13,7 +13,7 @@ searchTopic.addEventListener('submit', (e) => {
             //Make httpcall
             facebook.getTopic(searchText)
             .then(data => {
-                console.log(data);
+                console.log(searchText);
             })
         });
     }
