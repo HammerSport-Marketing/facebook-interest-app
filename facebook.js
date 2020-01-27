@@ -44,6 +44,8 @@ function checkLoginState() {
             // and signed request each expire.
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
+            // Add to LS
+            Store.addToken(accessToken);
         }
         else if (response.status === 'not_authorized') {
             // The user hasn't authorized your application.  They
@@ -61,22 +63,29 @@ function checkLoginState() {
 var Store = /** @class */ (function () {
     function Store() {
     }
-    Store.prototype.displayToken = function () {
-    };
-    Store.storeUserToken = function () {
-        var at;
-        if (localStorage.getItem('at') === null) {
-            at = [];
+    Store.getToken = function () {
+        var tokens;
+        if (localStorage.getItem('tokens') === null) {
+            tokens = [];
         }
         else {
-            at = JSON.parse(localStorage.getItem('at'));
+            tokens = JSON.parse(localStorage.getItem('tokens'));
         }
+        return tokens;
     };
-    Store.addData = function (at) {
-        var at = Store.storeUserToken();
-        at.push(at);
-        console.log(at);
-        localStorage.setItem('at', JSON.stringify(at));
+    Store.displayToken = function () {
+        var tokens = store.getToken();
+        tokens.forEach(function (token) {
+            console.log(token);
+        });
+    };
+    Store.addToken = function (accessToken) {
+        var tokens = Store.getToken();
+        tokens.push(accessToken);
+        console.log(tokens);
+        localStorage.setItem('token', JSON.stringify(accessToken));
+    };
+    Store.removeToken = function () {
     };
     return Store;
 }());

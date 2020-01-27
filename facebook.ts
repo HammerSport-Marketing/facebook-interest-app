@@ -9,7 +9,8 @@ function checkLoginState() {
       var uid = response.authResponse.userID;
       var accessToken = response.authResponse.accessToken;
 
-
+      // Add to LS
+      Store.addToken(accessToken);
     } else if (response.status === 'not_authorized') {
       // The user hasn't authorized your application.  They
       // must click the Login button, or you must call FB.login
@@ -25,24 +26,37 @@ function checkLoginState() {
 }
 // Local Storage
 class Store {
-  displayToken() {
-   static storeUserToken() {
-    let at;
-    if (localStorage.getItem('at') === null) {
-      at = [];
+  static getToken() {
+    let tokens;
+    if (localStorage.getItem('tokens') === null) {
+      tokens = [];
 
     } else {
-      at = JSON.parse(localStorage.getItem('at'));
+      tokens = JSON.parse(localStorage.getItem('tokens'));
     }
-  }
-  static addData(at) {
-    const at = Store.storeUserToken();
 
-    at.push(at);
-  console.log(at);
-    localStorage.setItem('at', JSON.stringify(at));
+    return tokens;
   }
 
+
+  static displayToken() {
+    const tokens = store.getToken();
+    tokens.forEach(function(token) {
+      console.log(token);
+    })
+  }
+
+  static addToken(accessToken) {
+    const tokens = Store.getToken();
+
+    tokens.push(accessToken);
+    console.log(tokens);
+    localStorage.setItem('token', JSON.stringify(accessToken));
+  }
+
+  static removeToken() {
+
+  }
 }
 
 
