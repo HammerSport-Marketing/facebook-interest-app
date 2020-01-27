@@ -3,7 +3,7 @@ var facebook = new Facebook;
 var searchBar = document.getElementById('searchBar');
 //Init UI
 var ui = new UI;
-var searchSubmit = document.querySelector('#searchSubmit');
+var searchSubmit = document.getElementById('searchSubmit');
 searchBar.addEventListener('keyup', function (e) {
     var searchText = e.target.value;
     // Search input event listener
