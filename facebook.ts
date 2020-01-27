@@ -71,7 +71,7 @@ FBLogin.addEventListener('click', (e) => {
 class Facebook {
   async getTopic(topic) {
     const interestResponse = await fetch(`
-    https://graph.facebook.com/search?type=adinterest&q=${topic}&limit=10000&locale=en_US&access_token=${accessToken}
+    https://graph.facebook.com/search?type=adinterest&q=${topic}&limit=10000&locale=en_US&access_token=${token}
     `);
 
     const interestData = await interestResponse.json();
