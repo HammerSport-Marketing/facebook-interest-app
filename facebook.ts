@@ -36,8 +36,13 @@ class Store {
 }
 
 class Facebook {
+  static addToken(accessToken) {
+    const tokens = Store.getToken();
 
-
+    tokens.push(accessToken);
+    console.log(tokens);
+    localStorage.setItem('token', JSON.stringify(accessToken));
+  }
 
   async getSearchData(search) {
     const searchResponse = await fetch(`https://graph.facebook.com/search?type=adinterest&q=${search}&limit=10000&locale=en_US&access_token=${token}`);
