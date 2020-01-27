@@ -75,12 +75,12 @@ var Store = /** @class */ (function () {
     Store.addData = function (at) {
         var at = Store.storeUserToken();
         at.push(at);
+        console.log(at);
         localStorage.setItem('at', JSON.stringify(at));
     };
     return Store;
 }());
 var FBLogin = document.querySelector('fb');
-console.log(uid);
 FBLogin.addEventListener('click', function (e) {
     checkLoginState();
     console.log(LoginState);

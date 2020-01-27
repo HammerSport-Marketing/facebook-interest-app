@@ -39,16 +39,17 @@ class Store {
     const at = Store.storeUserToken();
 
     at.push(at);
-
+  console.log(at);
     localStorage.setItem('at', JSON.stringify(at));
   }
+
 }
 
 
 
 const FBLogin = document.querySelector('fb');
 
-console.log(uid);
+
 FBLogin.addEventListener('click', (e) => {
   checkLoginState();
   console.log(LoginState);
