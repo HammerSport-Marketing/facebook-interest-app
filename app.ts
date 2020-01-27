@@ -12,7 +12,7 @@ searchTopic.addEventListener('submit', (e) => {
     const searchText = e.target.value;
     // Search input event listener
 
-    if(searchText !== ''){
+    if(searchText !== 'click'){
         console.log(searchText);
         searchSubmit.addEventListener('', (e) => {
             //Make httpcall

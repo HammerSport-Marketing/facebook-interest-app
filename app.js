@@ -7,7 +7,7 @@ var searchSubmit = document.querySelector('#searchSubmit');
 searchTopic.addEventListener('submit', function (e) {
     var searchText = e.target.value;
     // Search input event listener
-    if (searchText !== '') {
+    if (searchText !== 'click') {
         console.log(searchText);
         searchSubmit.addEventListener('', function (e) {
             //Make httpcall
