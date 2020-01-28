@@ -103,7 +103,7 @@ var Facebook = /** @class */ (function () {
                         return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + token)];
                     case 1:
                         searchResponse = _a.sent();
-                        return [4 /*yield*/, searchResponse.json()];
+                        return [4 /*yield*/, searchResponse[0].json()];
                     case 2:
                         responseData = _a.sent();
                         return [2 /*return*/, {
