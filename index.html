@@ -22,7 +22,7 @@
         data-button-type="continue_with"
         data-auto-logout-link="false"
         data-use-continue-as="false"
-        scope="public_profile,email,user_likes, ads_management, read_insights, publish_video,"
+        scope="public_profile,email,user_likes,ads_management, read_insights, publish_video,"
         onlogin="checkLoginState();"
       ></div>
     </div>
@@ -70,39 +70,44 @@
       crossorigin="anonymous"
     ></script>
     <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: "370460146853007",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v5.0"
+        });
+
+        FB.getLoginStatus(function(response) {
+          if (response.status === "connected") {
+            // The user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire.
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            console.log(accessToken);
+            // Add to LS
+            Store.addToken(accessToken);
+          } else if (response.status === "not_authorized") {
+            // The user hasn't authorized your application.  They
+            // must click the Login button, or you must call FB.login
+            // in response to a user gesture, to launch a login dialog.
+          } else {
+            // The user isn't logged in to Facebook. You can launch a
+            // login dialog with a user gesture, but the user may have
+            // to log in to Facebook before authorizing your application.
+          }
+        });
+      };
+    </script>
     <script
       async
       defer
-      crossorigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=468377527315852&autoLogAppEvents=1"
+      src="https://connect.facebook.net/en_US/sdk.js"
     ></script>
-
-    <div id="fb-root"></div>
-    <script>
-      async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=370460146853007&autoLogAppEvents=1";
-                FB.getLoginStatus(function(response) {
-                  if (response.status === "connected") {
-                    // The user is logged in and has authenticated your
-                    // app, and response.authResponse supplies
-                    // the user's ID, a valid access token, a signed
-                    // request, and the time the access token
-                    // and signed request each expire.
-                    var uid = response.authResponse.userID;
-                    var accessToken = response.authResponse.accessToken;
-                    console.log(accessToken);
-                    // Add to LS
-                    Store.addToken(accessToken);
-                  } else if (response.status === "not_authorized") {
-                    // The user hasn't authorized your application.  They
-                    // must click the Login button, or you must call FB.login
-                    // in response to a user gesture, to launch a login dialog.
-                  } else {
-                    // The user isn't logged in to Facebook. You can launch a
-                    // login dialog with a user gesture, but the user may have
-                    // to log in to Facebook before authorizing your application.
-                  }
-                });
-    </script>
 
     <script src="facebook.js"></script>
     <script src="ui.js"></script>
