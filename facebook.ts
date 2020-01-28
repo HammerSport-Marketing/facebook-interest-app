@@ -1,5 +1,4 @@
 
-const FBLogin = document.getElementById('FBLogin');
 
 // Local Storage
 class Store {
