@@ -1,116 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="bootstrap.min.css" />
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar navbar-dark bg-primary mb-3">
-      <div class="container">
-        <a href="" class="navbar-brand">GitHub Search</a>
-      </div>
+        <div class="container">
+            <a href="" class="navbar-brand">GitHub Search</a>
+        </div>
     </nav>
 
     <div class="container mx-auto" id="login">
-      <div
-        class="fb-login-button"
-        data-width=""
-        data-size="large"
-        data-button-type="continue_with"
-        data-auto-logout-link="false"
-        data-use-continue-as="false"
-        scope="public_profile,email"
-        onlogin="checkLoginState();"
-      ></div>
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onclick="checkLoginState();"></div>
     </div>
     <div class="container searchContainer">
-      <form class="form-inline md-form mr-auto mb-4">
-        <div class="search card card-body">
-          <h1>Search Facebook Interests</h1>
-          <p class="lead">Enter a topic to search</p>
+        <form class="form-inline md-form mr-auto mb-4">
+            <div class="search card card-body">
+                <h1>Search Facebook Interests</h1>
+                <p class="lead">Enter a topic to search</p>
 
-          <input
-            type="text"
-            id="searchBar"
-            class="form-control"
-            placeholder="Interest or Topic..."
-          />
+                <input type="text" id="searchBar" class="form-control" placeholder="Interest or Topic..." />
 
-          <div
-            class="btn  bg-primary mt-5 mx-auto text-white"
-            id="searchSubmit"
-          >
-            Search
-          </div>
-        </div>
-      </form>
+                <div class="btn  bg-primary mt-5 mx-auto text-white" id="searchSubmit">
+                    Search
+                </div>
+            </div>
+        </form>
     </div>
     <br />
     <div id="data"></div>
 
     <footer class="mt-5 p-3 text-center bg-light">
-      Facebook Search &copy;2020 RDS Ventures LLC
+        Facebook Search &copy;2020 RDS Ventures LLC
     </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <div id="fb-root"></div>
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId: "1285067144966043",
-          autoLogAppEvents: true,
-          xfbml: true,
-          version: "v5.0"
-        });
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: "1285067144966043",
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: "v5.0"
+            });
 
-        FB.getLoginStatus(function(response) {
-          if (response.status === "connected") {
-            // The user is logged in and has authenticated your
-            // app, and response.authResponse supplies
-            // the user's ID, a valid access token, a signed
-            // request, and the time the access token
-            // and signed request each expire.
-            var uid = response.authResponse.userID;
-            var accessToken = response.authResponse.accessToken;
-            console.log(accessToken);
-            // Add to LS
-            Store.addToken(accessToken);
-          } else if (response.status === "not_authorized") {
-            // The user hasn't authorized your application.  They
-            // must click the Login button, or you must call FB.login
-            // in response to a user gesture, to launch a login dialog.
-          } else {
-            // The user isn't logged in to Facebook. You can launch a
-            // login dialog with a user gesture, but the user may have
-            // to log in to Facebook before authorizing your application.
-          }
-        });
-      };
+            FB.getLoginStatus(function(response) {
+                if (response.status === "connected") {
+                    // The user is logged in and has authenticated your
+                    // app, and response.authResponse supplies
+                    // the user's ID, a valid access token, a signed
+                    // request, and the time the access token
+                    // and signed request each expire.
+                    var uid = response.authResponse.userID;
+                    var accessToken = response.authResponse.accessToken;
+                    console.log(accessToken);
+                    // Add to LS
+                    Store.addToken(accessToken);
+                } else if (response.status === "not_authorized") {
+                    // The user hasn't authorized your application.  They
+                    // must click the Login button, or you must call FB.login
+                    // in response to a user gesture, to launch a login dialog.
+                } else {
+                    // The user isn't logged in to Facebook. You can launch a
+                    // login dialog with a user gesture, but the user may have
+                    // to log in to Facebook before authorizing your application.
+                }
+            });
+        };
     </script>
-    <script
-      async
-      defer
-      src="https://connect.facebook.net/en_US/sdk.js"
-    ></script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <script src="facebook.js"></script>
     <script src="ui.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
