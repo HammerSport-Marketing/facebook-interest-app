@@ -49,8 +49,10 @@ var Store = /** @class */ (function () {
         return token;
     };
     Store.displayToken = function () {
-        var token = localStorage.getItem('token');
-        console.log(token);
+        var token = Store.getToken();
+        token.forEach(function (token) {
+            console.log(token);
+        });
     };
     Store.addToken = function (accessToken) {
         var token = Store.getToken();
@@ -67,10 +69,12 @@ var Facebook = /** @class */ (function () {
     }
     Facebook.prototype.getSearchData = function (search) {
         return __awaiter(this, void 0, void 0, function () {
-            var searchResponse, responseData;
+            var token, searchResponse, responseData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US")];
+                    case 0:
+                        token = JSON.parse(localStorage.getItem('token'));
+                        return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + token)];
                     case 1:
                         searchResponse = _a.sent();
                         return [4 /*yield*/, searchResponse[0].json()];
