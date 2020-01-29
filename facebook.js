@@ -1,3 +1,4 @@
+// Local Storage
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -34,36 +35,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-// Local Storage
-var Store = /** @class */ (function () {
-    function Store() {
-    }
-    Store.getToken = function () {
-        var token;
-        if (localStorage.getItem('token') === null) {
-            token = [];
-        }
-        else {
-            token = localStorage.getItem('token');
-        }
-        return token;
-    };
-    Store.displayToken = function () {
-        var token = Store.getToken();
-        token.forEach(function (token) {
-            console.log(token);
-        });
-    };
-    Store.addToken = function (accessToken) {
-        var token = Store.getToken();
-        token.push(accessToken);
-        console.log(token);
-        localStorage.setItem('token', accessToken);
-    };
-    Store.removeToken = function () {
-    };
-    return Store;
-}());
 var Facebook = /** @class */ (function () {
     function Facebook() {
     }
@@ -73,7 +44,7 @@ var Facebook = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        token = localStorage.getItem('token');
+                        token = JSON.parse(localStorage.getItem('token'));
                         return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + token)];
                     case 1:
                         searchResponse = _a.sent();
