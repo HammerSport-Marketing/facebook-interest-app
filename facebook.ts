@@ -8,7 +8,7 @@ class Store {
       token = [];
 
     } else {
-      token = JSON.parse(localStorage.getItem('token'));
+      token = localStorage.getItem('token');
     }
 
     return token;
@@ -27,7 +27,7 @@ class Store {
 
     token.push(accessToken);
     console.log(token);
-    localStorage.setItem('token', JSON.stringify(accessToken));
+    localStorage.setItem('token', accessToken);
   }
 
   static removeToken() {

@@ -44,7 +44,7 @@ var Store = /** @class */ (function () {
             token = [];
         }
         else {
-            token = JSON.parse(localStorage.getItem('token'));
+            token = localStorage.getItem('token');
         }
         return token;
     };
@@ -58,7 +58,7 @@ var Store = /** @class */ (function () {
         var token = Store.getToken();
         token.push(accessToken);
         console.log(token);
-        localStorage.setItem('token', JSON.stringify(accessToken));
+        localStorage.setItem('token', accessToken);
     };
     Store.removeToken = function () {
     };
