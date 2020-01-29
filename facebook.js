@@ -34,7 +34,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var FBLogin = document.getElementById('FBLogin');
 // Local Storage
 var Store = /** @class */ (function () {
     function Store() {
@@ -70,12 +69,10 @@ var Facebook = /** @class */ (function () {
     }
     Facebook.prototype.getSearchData = function (search) {
         return __awaiter(this, void 0, void 0, function () {
-            var token, searchResponse, responseData;
+            var searchResponse, responseData;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        token = JSON.parse(localStorage.getItem('token'));
-                        return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US&access_token=" + token)];
+                    case 0: return [4 /*yield*/, fetch("https://graph.facebook.com/search?type=adinterest&q=" + search + "&limit=10000&locale=en_US")];
                     case 1:
                         searchResponse = _a.sent();
                         return [4 /*yield*/, searchResponse[0].json()];
