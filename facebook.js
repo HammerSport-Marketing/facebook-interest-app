@@ -49,10 +49,8 @@ var Store = /** @class */ (function () {
         return token;
     };
     Store.displayToken = function () {
-        var token = Store.getToken();
-        token.forEach(function (token) {
-            console.log(token);
-        });
+        var token = localStorage.getItem('token');
+        console.log(token);
     };
     Store.addToken = function (accessToken) {
         var token = Store.getToken();

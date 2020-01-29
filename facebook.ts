@@ -16,10 +16,9 @@ class Store {
 
 
   static displayToken() {
-    const token = Store.getToken();
-    token.forEach(function (token) {
+    const token = localStorage.getItem('token');
       console.log(token);
-    })
+    
   }
 
   static addToken(accessToken) {

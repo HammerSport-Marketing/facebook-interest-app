@@ -63,7 +63,7 @@
                     var accessToken = response.authResponse.accessToken;
                     console.log(accessToken);
                     // Add to LS
-                    Store.addToken(accessToken);
+                    localStorage.addToken(accessToken);
                 } else if (response.status === "not_authorized") {
                     // The user hasn't authorized your application.  They
                     // must click the Login button, or you must call FB.login
