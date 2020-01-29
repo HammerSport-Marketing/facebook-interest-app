@@ -19,7 +19,6 @@
       <fb:login-button
         class="facebook-login-button"
         scope="public_profile,email"
-        onlogin="getLoginStatus();"
       >
       </fb:login-button>
     </div>
@@ -76,7 +75,7 @@
           xfbml: true,
           version: "v5.0"
         });
-        FB.getLoginStatus(function(response) {
+      //  FB.getLoginStatus(function(response) {
           if (response.status === "connected") {
             // The user is logged in and has authenticated your
             // app, and response.authResponse supplies
@@ -97,7 +96,7 @@
             // login dialog with a user gesture, but the user may have
             // to log in to Facebook before authorizing your application.
           }
-        });
+      //  });
       };
     </script>
     <script
