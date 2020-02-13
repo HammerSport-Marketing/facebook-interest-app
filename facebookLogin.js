@@ -59,6 +59,8 @@ function testAPI() {                      // Testing Graph API after login.  See
   });
 }
 
+
+// For some reason this is backwards...
 function setElement(isLoggedIn) {
   if (isLoggedIn) {
     alert('Please Login With Facebook To Continue');
