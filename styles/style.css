@@ -94,10 +94,7 @@ form input {
     font-size: 2rem;
 }
 
-.id,
-.name {
-  display: inline-block;
-}
+
 
 #status {
     text-align: center;
