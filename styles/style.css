@@ -33,7 +33,7 @@ label {
 /* Default Grid Layout */
 .grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-template-columns: repeat(4, 200px);
     grid-template-rows: auto;
     grid-gap: 1.5rem;
     align-items: stretch;
