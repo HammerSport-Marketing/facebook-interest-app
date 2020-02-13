@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Facebook Interest App</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <section id="login">
+      <div class="login">
+        <div class="label">Click Here To Login</div>
+        <div
+          class="fb-login-button"
+          data-width=""
+          data-scope="public_profile, email"
+          data-size="large"
+          data-button-type="continue_with"
+          data-auto-logout-link="false"
+          data-use-continue-as="true"
+        ></div>
+      </div>
+    </section>
+    <section id="searchContainer" class="container">
+      <div class="container">
+      <h1 class="title" id="h1-title">
+        Facebook Interest Search
+      </h1>
+      <br />
+      <div id="status"></div>
+      <br />
+        <form id="form1">
+          <label for="search-input">Enter Your Search Topic</label>
+          <br />
+          <input type="search" id="input" placeholder="Business, Sports..." />
+          <input
+            type="submit"
+            value="submit"
+            class="btn search-btn"
+            id="searchSubmit"
+          />
+        </form>
+      </div>
+    </section>
+    <section id="display-data" class="container">
+      
+
+      <div id="header" class="container grid">
+        <h3 class="id itemLabel" id="id">Interest ID</h3>
+        <h3 class="name itemLabel" id="name">Interest Name</h3>
+        <h3 id="topic" class="itemLabel topic">Topic</h3>
+        <h3 id="audienceSize" class="name itemLabel">Audience Size</h3>
+      </div>
+      <div id="data" class=""></div>
+    </section>
+    <script src="facebookLogin.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

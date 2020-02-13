@@ -1,0 +1,104 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Styling */
+html,
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.7em;
+  margin-top: 2rem;
+}
+
+.headerDisplay {
+  display: flex;
+}
+h1 {
+    text-align: center;
+}
+
+h3 {
+  padding-left: 10px;
+}
+
+label {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Default Grid Layout */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+}
+/* Utility Classes */
+.login {
+  display: inline-block;
+  margin: 50px;
+}
+
+.btn {
+  background: #3b5998;
+  padding: 10px 20px;
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+}
+
+.btn:hover {
+  background: #576b96;
+}
+
+.container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 20px;
+}
+
+.itemLabel {
+    padding: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.item {
+    background-color: #3b5998;
+    color: aliceblue;
+    padding: 1rem;
+    border: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+}   
+form {
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+form input {
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+.id,
+.name {
+  display: inline-block;
+}
+
+#status {
+    text-align: center;
+}
