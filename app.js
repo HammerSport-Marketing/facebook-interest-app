@@ -24,7 +24,7 @@ searchForm.addEventListener('submit', e => {
             //     searchResponse
             // },
             searchResponse.forEach(topic => {
-                html = `<a id="searchdisplay ${topic.id}" name="${topic.name}" class="container grid">
+                html = `<a id="searchdisplay ${topic.id}" name="${topic.name}" class="container">
             <div class="id item" id="id">ID:<br>${topic.id}</div>
             <div class="name item" id="name">Name:<br>${topic.name}</div>
             <div id="topic" class="item topic">Topic:<br>${topic.topic}</div>
