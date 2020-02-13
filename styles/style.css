@@ -12,6 +12,7 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.7em;
   margin-top: 2rem;
+  background-color: #ced7eb;
 }
 
 .headerDisplay {
@@ -28,15 +29,23 @@ h3 {
 label {
     font-size: 2rem;
     text-align: center;
-}
-
-/* Default Grid Layout */
-.grid{
+  }
+  
+  /* Default Grid Layout */
+  .grid{
     display: grid;
     grid-template-columns: repeat(4, 200px);
     grid-template-rows: auto;
     grid-gap: 1.5rem;
     align-items: stretch;
+  }
+  
+  .formGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+    justify-items: center;
 }
 /* Utility Classes */
 .login {
@@ -45,13 +54,13 @@ label {
 }
 
 .btn {
-  background: #3b5998;
+  background: #ffffff;
   padding: 10px 20px;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
-  display: inline-block;
   font-size: 2rem;
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5) ;
 }
 
 .btn:hover {
@@ -86,7 +95,12 @@ label {
 form {
     text-align: center;
     font-size: 2rem;
-
+    background-color: #3b5998;
+    max-width: 500px;
+padding-top: 2rem;
+padding-bottom: 2rem;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5) ;
 }
 
 form input {
@@ -94,7 +108,14 @@ form input {
     font-size: 2rem;
 }
 
-
+form label {
+  color: #ffffff;
+  font-weight: 800;
+  background-color: rgb(0, 24, 77);
+  border-radius: 10px;
+  padding: .5rem;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5) ;
+}
 
 #status {
     text-align: center;
