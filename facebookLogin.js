@@ -3,16 +3,19 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
       localStorage.setItem('token', response.authResponse.accessToken)
-      localStorage.setItem('email', )
-      {console.log('itemset')};
+      localStorage.setItem('email', response.authResponse.email)
+      // {console.log('itemset')};
       testAPI();  
       document.querySelector('#login').classList.toggle( 'hide');
-    } else {                                 // Not logged into your webpage or we are unable to tell.
+      document.querySelector('#searchContainer').classList.toggle( 'hide');
+      document.querySelector('#display-data').classList.toggle( 'hide');
+          } else {                                 // Not logged into your webpage or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this webpage.';
     }
+    
   }
-
+  
 
   function checkLoginState() {               // Called when a person is finished with the Login Button.
     FB.getLoginStatus(function(response) {   // See the onlogin handler
@@ -48,7 +51,7 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+      console.log('Successful login for: ' + response);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });

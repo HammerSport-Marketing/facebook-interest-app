@@ -36,7 +36,7 @@ searchForm.addEventListener('submit', e => {
 
 })
 
-click.addEventListener('click', e => {
-    console.log('click');
-})
+// click.addEventListener('click', e => {
+//     console.log('click');
+// })
 
