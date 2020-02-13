@@ -33,21 +33,29 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <section id="login">
-      <div class="login">
-        <div class="label">Click Here To Login</div>
-        <div
-          class="fb-login-button"
-          onLogin="checkLoginState();"
-          data-width=""
-          data-scope="public_profile,email"
-          data-size="large"
-          data-button-type="continue_with"
-          data-auto-logout-link="false"
-          data-use-continue-as="true"
-        ></div>
-      </div>
-    </section>
+    <nav id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+      </ul>
+      <section id="login">
+        <div class="login">
+          <div class="label">Click Here To Login</div>
+          <div
+            class="fb-login-button"
+            onLogin="checkLoginState();"
+            data-width=""
+            data-scope="public_profile,email"
+            data-size="large"
+            data-button-type="continue_with"
+            data-auto-logout-link="false"
+            data-use-continue-as="true"
+          ></div>
+        </div>
+      </section>
+
+    </nav>
     <section id="searchContainer" class="container hide">
       <div class="container">
         <h1 class="title" id="h1-title">
