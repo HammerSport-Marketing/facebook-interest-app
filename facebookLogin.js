@@ -63,13 +63,13 @@ function testAPI() {                      // Testing Graph API after login.  See
 // For some reason this is backwards...
 function setElement(isLoggedIn) {
   if (isLoggedIn) {
-    alert('Please Login With Facebook To Continue');
-  } else {
     alert('logged in');
     document.querySelector('#login').classList.toggle( 'hide');
       document.querySelector('#searchContainer').classList.toggle( 'hide');
       document.querySelector('#display-data').classList.toggle( 'hide');
       document.getElementById('status').innerHTML = 'Please log ' +
       'into this webpage.';
+  } else {
+    alert('Please Login With Facebook To Continue');
   }
 }
