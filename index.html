@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Google Tag Manager -->
     <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TTXF5LX");
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js"
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-TTXF5LX");
     </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
@@ -22,11 +26,11 @@
     <title>Facebook Interest App</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" href="/styles/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
+    <noscript><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-TTXF5LX"
         height="0"
         width="0"
@@ -35,61 +39,48 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <nav id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li>
-          <!-- <a href="/">Home</a> -->
-        </li>
-      </ul>
-      <section id="login">
-        <div class="login">
-          <div class="label">Click Here To Login</div>
-          <div
-            class="fb-login-button"
-            onLogin="checkLoginState();"
-            data-width=""
-            data-scope="public_profile,email"
-            data-size="large"
-            data-button-type="continue_with"
-            data-auto-logout-link="false"
-            data-use-continue-as="true"
-          ></div>
-        </div>
-      </section>
+        <ul class="nav navbar-nav">
+            <li>
+                <!-- <a href="/">Home</a> -->
+            </li>
+        </ul>
+        <section id="login">
+            <div class="login">
+                <div class="label">Click Here To Login</div>
+                <div class="fb-login-button" onLogin="checkLoginState();" data-width="" data-return_scopes="true" data-scope="public_profile,email" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>
+            </div>
+        </section>
 
     </nav>
     <section id="searchContainer" class="container hide">
-      <div class="container">
-        <h1 class="title" id="h1-title">
-          Facebook Interest Search
-        </h1>
-        <br />
-        <div id="status"></div>
-        <br />
-        <div class="formGrid">
-          <form id="form1">
-            <label for="search-input">Enter Your Search Topic</label>
+        <div class="container">
+            <h1 class="title" id="h1-title">
+                Facebook Interest Search
+            </h1>
             <br />
-            <input type="search" id="input" placeholder="Business, Sports..." />
-            <input
-              type="submit"
-              value="submit"
-              class="btn search-btn"
-              id="searchSubmit"
-            />
-          </form>
+            <div id="status"></div>
+            <br />
+            <div class="formGrid">
+                <form id="form1">
+                    <label for="search-input">Enter Your Search Topic</label>
+                    <br />
+                    <input type="search" id="input" placeholder="Business, Sports..." />
+                    <input type="submit" value="submit" class="btn search-btn" id="searchSubmit" />
+                </form>
+            </div>
         </div>
-      </div>
     </section>
     <section id="display-data" class="container hide">
-      <div id="header" class="container grid">
-        <h3 class="id itemLabel" id="id">Interest ID</h3>
-        <h3 class="name itemLabel" id="name">Interest Name</h3>
-        <h3 id="topic" class="itemLabel topic">Topic</h3>
-        <h3 id="audienceSize" class="name itemLabel">Audience Size</h3>
-      </div>
-      <div id="data" class="container grid"></div>
+        <div id="header" class="container grid">
+            <h3 class="id itemLabel" id="id">Interest ID</h3>
+            <h3 class="name itemLabel" id="name">Interest Name</h3>
+            <h3 id="topic" class="itemLabel topic">Topic</h3>
+            <h3 id="audienceSize" class="name itemLabel">Audience Size</h3>
+        </div>
+        <div id="data" class="container grid"></div>
     </section>
     <script src="facebookLogin.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
