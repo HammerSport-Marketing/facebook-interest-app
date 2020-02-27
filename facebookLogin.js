@@ -69,7 +69,7 @@ function setElement(isLoggedIn) {
         document.querySelector('#display-data').classList.toggle('hide');
         document.getElementById('status').innerHTML = 'Please log ' +
             'into this webpage.';
-        window.reload();
+        // window.reload();
     } else {
         alert('Please Login With Facebook To Continue');
     }
