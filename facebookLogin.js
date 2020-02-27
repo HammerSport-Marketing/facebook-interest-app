@@ -15,7 +15,10 @@ function statusChangeCallback(response) { // Called with the results from FB.get
     }
 }
 
-
+logout = document.querySelector('.logout');
+logout.addEventListener('click', () => {
+    FB.logout();
+})
 
 function checkLoginState() { // Called when a person is finished with the Login Button.
     FB.getLoginStatus(function(response) { // See the onlogin handler
