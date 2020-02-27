@@ -63,7 +63,7 @@ function testAPI() { // Testing Graph API after login.  See statusChangeCallback
 // For some reason this is backwards...
 function setElement(isLoggedIn) {
     if (isLoggedIn) {
-        alert('logged in');
+        // alert('logged in');
         document.querySelector('#login').classList.toggle('hide');
         document.querySelector('#searchContainer').classList.toggle('hide');
         document.querySelector('#display-data').classList.toggle('hide');
